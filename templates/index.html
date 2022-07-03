@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block TituloPagina %}
+Inicio
+{% endblock TituloPagina %}
+
+{% block ImagenPrincipal %}
+url('{% static 'assets/img/Bienvenido.jpg' %}')
+{% endblock ImagenPrincipal %}
+
+{% block Post %}
+<center><iframe width="800" height="400" src="https://www.youtube.com/embed/35okIIAfDu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><center>
+<br>
+    <h5> Podes encontrar más información <a href="https://pubguniverse.com/en"><u>AQUI</u></a></h5>
+    <br>
+    <br>
+    <br>
+{% endblock Post %}
+
+<!-- Last Post -->
+{% block UltimosPost %}
+<h5>ULTIMAS ENTRADAS</h5>
+<div class="container">
+    <div class="card">
+        <div class="card">
+            <img src="{{ post_parches.imagen }}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ post_parches.categoria }}</h5>
+            <p class="card-text"> {{ post_parches.titulo }}</p>
+            </div>
+    </div>
+
+    <div class="card">
+        <div class="card">
+            <img src="{{ post_noticias.imagen }}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ post_noticias.categoria }}</h5>
+            <p class="card-text"> {{ post_noticias.titulo }}</p>
+            </div>
+    </div>
+
+    <div class="card">
+        <div class="card">
+            <img src="{{ post_sports.imagen }}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ post_sports.categoria }}</h5>
+            <p class="card-text"> {{ post_sports.titulo }}</p>
+            </div>
+    </div
+
+    <div class="card">
+        <div class="card">
+            <img src="{{ post_comunidad.imagen }}" class="card-img-top" alt="...">
+            <div class="card-body">
+            <h5 class="card-title">{{ post_comunidad.categoria }}</h5>
+            <p class="card-text"> {{ post_comunidad.titulo }}</p>
+            </div>
+    </div>
+</div>
+
+{% endblock UltimosPost %}

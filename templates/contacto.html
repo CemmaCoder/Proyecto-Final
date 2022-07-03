@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block TituloPagina %}
+Contacto
+{% endblock TituloPagina %}
+
+{% block ImagenPrincipal %}
+url('{% static 'assets/img/Contacto.png' %}')
+{% endblock ImagenPrincipal %}
+
+{% load crispy_forms_tags %}
+
+{% block Post %}
+
+
+
+<br>
+<br>
+<div class="row">
+    <div class="col-12 col-md-9 offset-md-2">
+        <div class="card-body">
+            <h2><center> ¿Dudas, problemas, sugerencias? </center></h2>
+            <hr>
+            <h2><u><center> Comunicate con nosotros </center></h2></u>
+            <hr>
+            <form action="" method="POST"> 
+            {% csrf_token %}
+            {{ form | crispy }}
+            <hr>
+            <div class="d-flex justify-content-center mb-3 mt-4">
+                <center><input type="submit" value="ENVIAR" href="" class="btn btn-warning float-right"></center>
+                &nbsp; &nbsp; &nbsp;
+                <center><input type="reset" value="CANCELAR" href="" class="btn btn-danger float-right"></center>
+                <br>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock Post %}

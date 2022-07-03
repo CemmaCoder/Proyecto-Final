@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block TituloPagina %}
+Creacion/Edicion
+{% endblock TituloPagina %}
+
+{% block ImagenPrincipal %}
+url('{% static 'assets/img/CrearEditar.png' %}')
+{% endblock ImagenPrincipal %}
+
+{% load crispy_forms_tags %}
+
+{% block Post %}
+
+<h2><u><center>Formulario de Creacion/Edicion<center></u></h2>
+
+<br>
+
+<form action="" method="POST"> 
+    {% csrf_token %}
+    {{ form | crispy }}
+    <br>
+    <input type="submit" value="Enviar" href="" class="btn btn-primary float-right">
+    <br>
+    <br>
+        {{ mensaje }}
+</form>
+
+
+{% endblock Post %}

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block TituloPagina %}
+Registro
+{% endblock TituloPagina %}
+
+{% block ImagenPrincipal %}
+url('{% static 'assets/img/Registro.jpg' %}')
+{% endblock ImagenPrincipal %}
+
+{% load crispy_forms_tags %}
+
+{% block Post %}
+
+
+
+<br>
+<br>
+<div class="row">
+    <div class="col-12 col-md-9 offset-md-2">
+        <div class="card-body">
+            <h2><center><u>Registro de Usuario</u></center></h2>
+            <hr>
+            <form action="" method="POST"> 
+            {% csrf_token %}
+            {{ form | crispy }}
+            <hr>
+            <a href="{% url 'index'%}"> Volver a INICIO </a> | 
+            <a href="{% url 'login'%}"> Iniciar Sesión </a>
+            <hr>
+            <div class="d-flex justify-content-center mb-3 mt-4">
+                <center><input type="submit" value="CREAR" href="" class="btn btn-warning float-right"></center>
+                &nbsp; &nbsp; &nbsp;
+                <center><input type="submit" value="CANCELAR" href="" class="btn btn-danger float-right"></center>
+                <br>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<br>
+
+{% endblock Post %}

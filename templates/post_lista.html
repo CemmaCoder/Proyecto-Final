@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block ImagenPrincipal %}
+url('{% static 'assets/img/ListarPost.png' %}')
+{% endblock ImagenPrincipal %}
+
+{% block Post %}
+
+<h2><center><u>LISTADO DE POST</u><center></h2>
+
+<div class="d-flex justify-content-end mb-3 mt-5">
+    <a href="{% url 'crear_post' %}"><i style="font-size:25px " class="fa-solid mx-2 fa-circle-plus"></i></a>
+</div>
+{% for post in object_list %}
+<div class="mb-5 shadow border">
+<span class="list-group-item"> <u>Categoria:</u> {{post.categoria.nombre}} </span>
+<span class="list-group-item"> <u>Post:</u> {{ post }} </span>
+<div class="d-flex justify-content-center m-4">
+        <a href="{% url 'detalle_post' post.id %}"><i style="font-size:25px" class="fa-solid mx-2 fa-magnifying-glass"></i></a>
+        <a href="{% url 'editar_post' post.id %}"><i style="font-size:25px" class="fa-solid mx-2 fa-pen-to-square"></i></a>
+        <a href="{% url 'borrar_post' post.id %}"><i style="font-size:30px" class="fa-solid mx-2 fa-xmark"></i></a>
+</div>
+</div>
+{% endfor %}
+
+{% endblock Post %}

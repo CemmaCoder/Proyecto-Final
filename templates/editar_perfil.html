@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block TituloPagina %}
+Editar Perfil
+{% endblock TituloPagina %}
+
+{% block ImagenPrincipal %}
+url('{% static 'assets/img/Registro.jpg' %}')
+{% endblock ImagenPrincipal %}
+
+{% load crispy_forms_tags %}
+
+{% block Post %}
+
+<h2><u><center>Editar Perfil<center></u></h2>
+<h2><center>Bienvenido {{usuario}}<center></h2>
+
+<br>
+<br>
+
+<form action="{% url 'editar_perfil' %}" method="POST"> 
+    {% csrf_token %}
+    {{ form | crispy }}
+    <br>
+    <center><input type="submit" value="Guardar" href="" class="btn btn-primary float-right"></center>
+    <br>
+    <br>
+        {{ mensaje }}
+</form>
+
+
+{% endblock Post %}

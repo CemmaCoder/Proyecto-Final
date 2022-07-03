@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block TituloPagina %}
+Borrar
+{% endblock TituloPagina %}
+
+{% block ImagenPrincipal %}
+url('{% static 'assets/img/Borrar.png' %}')
+{% endblock ImagenPrincipal %}
+
+{% load crispy_forms_tags %}
+
+{% block Post %}
+
+
+<form action="" method="POST"> 
+    {% csrf_token %}
+    {{ form | crispy }}
+    <h1><u><center>ATENCION<center></u></h1>
+    <h3><center>¿Estas seguro que deseas eliminar el post?</center></h3>
+    <br>
+    <br>
+    <h5><center>"  {{ post.titulo }}  "</center></h5>
+    <br>
+    <br>
+    <center><input type="submit" value="Confirmar" href="" class="btn btn-danger"></center>
+    <br>
+    <br>
+        {{ mensaje }}
+</form>
+
+
+{% endblock Post %}

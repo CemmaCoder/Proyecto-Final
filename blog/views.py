@@ -212,3 +212,6 @@ def editarPerfil(request):
     return render(request, 'editar_perfil.html', {'form': form, 'usuario': usuario.username})
 
 # ---------------------------------
+
+def profile_request(request):
+    pass

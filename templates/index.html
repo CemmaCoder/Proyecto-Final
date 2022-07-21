@@ -13,9 +13,15 @@ url('{% static 'assets/img/Bienvenido.jpg' %}')
 
 
 {% block Post %}
-<center><iframe width="800" height="400" src="https://www.youtube.com/embed/35okIIAfDu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><center>
-<br>
-    <h5> Podes encontrar más información <a href="https://pubguniverse.com/en"><u>AQUI</u></a></h5>
+<div class="container">
+    <div class="ratio ratio-16x9">
+        <iframe width="800" height="400" src="https://www.youtube.com/embed/35okIIAfDu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+    <br>
+    <br>
+
+    <center><h5> Podes encontrar más información <a href="https://pubguniverse.com/en"><u>AQUI</u></a></h5></center>
     <br>
     <br>
     <br>
@@ -23,7 +29,7 @@ url('{% static 'assets/img/Bienvenido.jpg' %}')
 
 <!-- Last Post -->
 {% block UltimosPost %}
-<h5>ULTIMAS ENTRADAS</h5>
+<center><h5>ULTIMAS ENTRADAS</h5></center>
 <div class="container">
     <div class="card">
         <div class="card">
